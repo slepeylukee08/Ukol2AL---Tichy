@@ -18,7 +18,7 @@ def bubble_sort():
     n = len(array)
     for i in range(n-1):
         for j in range(0,n-i-1):
-            if array[j] > array[j+1] :
+            if array[j] > array[j+1] : #Pokud je číslo napřílad na první pozici větší než druhé, tak to kód vyhodnotí a v dalším kroku to poté prohodí
                 array[j], array[j+1] = array[j+1], array[j] # Prohození prvků
             print(array) # Výpis aktuálního stavu pole
     return array
