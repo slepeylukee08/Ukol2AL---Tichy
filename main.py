@@ -25,6 +25,45 @@ def bubble_sort():
 
 print(bubble_sort())
 
+import random
+
+def bogo_sort(arr):
+    def is_sorted(arr):
+        return all(arr[i] <= arr[i+1] for i in range(len(arr) - 1))
+
+    while not is_sorted(arr):
+        random.shuffle(arr)
+    return arr
+
+def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        min_idx = i
+        for j in range(i+1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr
+
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+    return arr
+
+# Test the functions
+if __name__ == "__main__":
+    test_array = [random.randint(0, 100) for _ in range(10)]
+    print("Original Array:", test_array)
+
+    print("\nBogo Sort:", bogo_sort(test_array[:]))
+    print("Selection Sort:", selection_sort(test_array[:]))
+    print("Insertion Sort:", insertion_sort(test_array[:]))
+
 
 
 
