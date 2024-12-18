@@ -54,8 +54,7 @@ def insertion_sort(arr):
             j -= 1
         arr[j + 1] = key
     return arr
-
-# Test the functions
+#Test
 if __name__ == "__main__":
     test_array = [random.randint(0, 100) for _ in range(10)]
     print("Original Array:", test_array)
